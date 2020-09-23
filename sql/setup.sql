@@ -7,10 +7,10 @@ CREATE TABLE recipes (
   directions TEXT[]
 );
 
-CREATE TABLE logs (
-  id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-  recipe_id BIGINT REFERENCES recipes(id),
-  date_of_event TEXT NOT NULL,
-  notes TEXT NOT NULL,
-  rating TEXT NOT NULL
-);
+-- CREATE TABLE logs (
+--   id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+--   recipe_id BIGINT REFERENCES recipes(id),
+--   date_of_event TEXT NOT NULL,
+--   notes TEXT NOT NULL,
+--   rating TEXT NOT NULL
+-- );
