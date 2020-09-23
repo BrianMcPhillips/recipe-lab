@@ -48,7 +48,7 @@ describe('recipe-lab routes', () => {
 
     const response = await request(app).get(`/api/v1/recipes/${recipe.id}`);
 
-    expect(response.body.toEqual(recipe))
+    expect(response.body).toEqual(recipe);
   });
 
   it('gets all recipes', async() => {
@@ -105,6 +105,7 @@ describe('recipe-lab routes', () => {
 
   it('deletes a recipe by id', async() => {
     const recipe = await Recipe.insert({
+      name: 'cookies',
       directions: [
         'preheat oven to 375',
         'mix ingredients',
@@ -115,6 +116,6 @@ describe('recipe-lab routes', () => {
 
     const response = await request(app).delete(`/api/v1/recipes/${recipe.id}`);
 
-    expect(response.body).toEqual(recipe)
+    expect(response.body).toEqual(recipe);
   });
 });
